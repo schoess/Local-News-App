@@ -16,32 +16,32 @@ https://github.com/schoess/Local-News-App/
 
 #### Materialize CSS
 
-Header
+* Header
 
-Filter Menu
+* Filter Menu
 
-Single-scrolling list of articles
+* Single-scrolling list of articles
 
-Each article Image, Title, Author, Date, Synopsis.
+* Each article Image, Title, Author, Date, Synopsis.
 
-Footer
+* Footer
 
 ### APIs Used:
 
 GeoJS
 
-NewYorkTimes (or other news API)
+* NewYorkTimes (or other news API)
 
 ### Rough Breakdown of tasks:
 
-Initial API exploration
+* Initial API exploration
 
-HTML Skeleton
+* HTML Skeleton
 
-Fleshed-out HTML/CSS
+* Fleshed-out HTML/CSS
 
-Functional JS
+* Functional JS
 
-Polish MVP/Cleanup
+* Polish MVP/Cleanup
 
-Additional Features Passes
+* Additional Features Passes
