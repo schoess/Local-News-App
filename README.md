@@ -28,7 +28,7 @@ https://github.com/schoess/Local-News-App/
 
 ### APIs Used:
 
-GeoJS
+* GeoJS
 
 * NewYorkTimes (or other news API)
 
