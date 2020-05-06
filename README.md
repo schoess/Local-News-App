@@ -6,11 +6,11 @@ https://github.com/schoess/Local-News-App/
 
 ### User Story:
 
-**AS A** mobile or desktop web user
-
-**I WANT** quickly view local news articles relevant to me based on my location
-
-**SO THAT** I can stay up to date on what's happening in my community
+```
+AS A mobile or desktop web user
+I WANT quickly view local news articles relevant to me based on my location
+SO THAT I can stay up to date on what's happening in my community
+```
 
 ### Wireframe or sketch of Design:
 
