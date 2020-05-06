@@ -8,7 +8,7 @@ https://github.com/schoess/Local-News-App/
 
 ```
 AS A mobile or desktop web user
-I WANT quickly view local news articles relevant to me based on my location
+I WANT to quickly view local news articles relevant to me based on my location
 SO THAT I can stay up to date on what's happening in my community
 ```
 
