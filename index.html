@@ -1,16 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Local News</title>
-</head>
-<body>
+<html lang="en-us">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="assets/style.css" />
+
+        <title>Local News</title>
+        
+    </head>
+
+    <body> 
+        <header>
+            <!-- Navigation -->
+            <nav class="nav-extended">
+                <div class="nav-wrapper">
+                    <!-- Top Logo -->
+                    <a class="brand-logo center">Local News</a>
+                    <!-- This will hide the hamburge menu icon on medium screens and larger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
+                    <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
+                    <ul id="nav-mobile" class="hide-on-med-and-down show-on-medium">
+                        <li><a href="#!"><i class="material-icons">search</i></a></li>
+                        <li><a href="#!">Previous Searches</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- This will show the sidenav when the menu is clicked -->
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="#"><i class="material-icons">search</i></a></li>
+                <li><a href="#">Previous Searches</a></li>
+            </ul>
+            
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <!-- side bar with article choices (pictures and -->
+                </div>
+                <div class="col s12 m8 l9">
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    @ 2020 Copyright
+                    <a class="grey-text text-lighten-4 right" href="#!">Links?</a>
+                </div>
+            </div>
+        </footer>
+ 
     
+        <!-- slider and checkbox
+        slider = last 10 days and 30 days
+        checkbox = broad search-->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/script.js"></script>
-</body>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="assets/script.js"></script>
+    </body>
+       
 </html>
