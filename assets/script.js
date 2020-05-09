@@ -1,13 +1,13 @@
 
-// This is for the sidenav
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, options);
-});
+// // This is for the sidenav
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.sidenav');
+// //   var instances = M.Sidenav.init(elems, options);
+// });
 
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-})
+// $(document).ready(function(){
+//   $('.sidenav').sidenav();
+// })
 
 
 // Newsapi.org
@@ -46,11 +46,11 @@ function saveLocation(location) {
     } else {
         fullName = userLocation.city + ", " + userLocation.state;
     }
-    if (pastLocation == "") {
-        pastLocation.unshift({...userLocation});
-    } else if (Object.values(userLocation.city).includes(pastLocation.city)) {
-        console.log("Current city is already stored in pastLocations")
-    }
+    // if (pastLocation == "") {
+    //     pastLocation.unshift({...userLocation});
+    // } else if (Object.values(userLocation.city).includes(pastLocation.city)) {
+    //     console.log("Current city is already stored in pastLocations")
+    // }
 }
 
 function findArticles () {
@@ -65,6 +65,11 @@ function findArticles () {
         .then(function (response) {
             console.log(response);
             localArticles = response;
+            //Appends article info to page
+            $(".s2").append("<div class='thumbnailHolder'>" + 
+            "<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>" + "</div>");
+            $(".s6").append("<h5 class='title'>" + response.articles[1].title + "</h5>");
+            $(".s6").append("<hp class='description'>" + response.articles[1].description + "</p>");
     });
 }
 
