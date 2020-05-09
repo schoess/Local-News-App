@@ -54,6 +54,10 @@ function searchArray () {
     }
 }
 
+// function bogusFunction () {
+
+// }
+
 function findArticles () {
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         userLocation.city +
