@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // This is for the sidenav
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
-=======
+
 // Newsapi.org
 // var queryURL = 'http://newsapi.org/v2/everything?q=' +
 //     subject +
@@ -69,12 +69,7 @@ function findArticles () {
 
 function writeArticles () {
     for (article in localArticles) {
-
-<<<<<<< HEAD
+        
     }
 }
-=======
-//     }
-// }
->>>>>>> master
->>>>>>> master
+
