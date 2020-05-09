@@ -1,21 +1,12 @@
-
-// // This is for the sidenav
+// This is for the sidenav
 // document.addEventListener('DOMContentLoaded', function() {
 //   var elems = document.querySelectorAll('.sidenav');
-// //   var instances = M.Sidenav.init(elems, options);
+//   var instances = M.Sidenav.init(elems, options);
 // });
 
 // $(document).ready(function(){
 //   $('.sidenav').sidenav();
-// })
-
-
-// Newsapi.org
-// var queryURL = 'http://newsapi.org/v2/everything?q=' +
-//     subject +
-//     '&sortBy=relevancy' +
-//     '&pageSize=10' +
-//     '&apiKey=51d68d8527904bf68e3a70ba046f4112';
+// });
 
 var userLocation = {"city": "", "state": "", "country": ""};
 var pastLocations = [];
@@ -46,11 +37,21 @@ function saveLocation(location) {
     } else {
         fullName = userLocation.city + ", " + userLocation.state;
     }
-    // if (pastLocation == "") {
-    //     pastLocation.unshift({...userLocation});
-    // } else if (Object.values(userLocation.city).includes(pastLocation.city)) {
-    //     console.log("Current city is already stored in pastLocations")
-    // }
+    if (pastLocations == "" || searchArray() == true) {
+        pastLocations.unshift({...userLocation});
+    } else {
+        console.log("Current city is already stored in pastLocations")
+    }
+}
+
+function searchArray () {
+    for (var i=0; i < pastLocations.length; i++) {
+        if (pastLocations[i].city === userLocations.city) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 
 function findArticles () {
@@ -78,8 +79,4 @@ function findArticles () {
 
 //     }
 // }
-
-function search() {
-
-}
 
