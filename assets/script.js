@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
-});
+})
+
 
 // Newsapi.org
 // var queryURL = 'http://newsapi.org/v2/everything?q=' +
@@ -72,4 +73,8 @@ function findArticles () {
 
 //     }
 // }
+
+function search() {
+
+}
 
