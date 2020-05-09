@@ -66,6 +66,11 @@ function findArticles () {
         .then(function (response) {
             console.log(response);
             localArticles = response;
+            //Appends article info to page
+            $(".s2").append("<div class='thumbnailHolder'>" + 
+            "<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>" + "</div>");
+            $(".s6").append("<h5 class='title'>" + response.articles[1].title + "</h5>");
+            $(".s6").append("<hp class='description'>" + response.articles[1].description + "</p>");
     });
 }
 
