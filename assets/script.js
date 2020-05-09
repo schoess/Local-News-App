@@ -36,7 +36,7 @@ function saveLocation(location) {
     }
     if (pastLocation == "") {
         pastLocation.unshift({...userLocation});
-    } else if (Object.values(userLocation.city).includes(pastLocation.city)) {
+    } else if (Object.values(pastLocation.city).includes(userLocation.city)) {
         console.log("Current city is already stored in pastLocations")
     }
 }
@@ -56,8 +56,8 @@ function findArticles () {
     });
 }
 
-// function writeArticles () {
-//     for (article in localArticles) {
+function writeArticles () {
+    for (article in localArticles) {
 
-//     }
-// }
+    }
+}
