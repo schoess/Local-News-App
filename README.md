@@ -28,7 +28,6 @@ WHEN I am given those articles
 THEN I see a thumbnail image (if available), headline, date, author (if available), and short description
 WHEN I click anywhere on the article
 THEN it brings me to the article source
-
 ```
 
 ### Wireframe or sketch of Design:
