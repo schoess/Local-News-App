@@ -3,6 +3,11 @@
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.dropdown-trigger').dropdown();
+  $('#slide-out')
+        .sidenav()
+        .on('click tap', 'li a', () => {
+            $('#slide-out').sidenav('close');
+        });
 })
 
 
