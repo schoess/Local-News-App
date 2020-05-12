@@ -24,21 +24,57 @@
                     <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
                     
                     <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
-                    <ul id="nav-mobile" class="hide-on-med-and-down show-on-medium">
-                        
-                        <li><a href="#!" class="" data-target="dropdown1"><i class="material-icons" id="dropdown1">search</i></a></li>
-                        <li><a href="#!">Previous Searches</a></li>
-                    </ul>
+                    
+                    <ul id="nav-mobile" class="">                       
+                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-medium" data-target="slide-out1"><i class="material-icons">search</i></a></li>
+                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down hide-on-medium" data-target="slide-out1">Search</a></li>
+                        <li><a href="#!" class="hide-on-med-and-down show-on-medium">Previous Searches</a></li>
+                    </u>
                     <!-- User search keyword shows up here -->
                     <ul id="searchKey" class="right mr-2">
                         <li class="">Keyword: </li>
                         <li class="keyword"></li>
                     </ul>
-
+                    <ul id="slide-out1" class="sidenav">
+                        <li>
+                            <a href="#">
+                                <div class="row">
+                                    <form class="col search-decor">
+                                        <div class="input-field col s12">
+                                            <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
+                                            <label for="search">Enter Keyword</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- This is the slider -->
+                        <li>
+                            <a href="#">
+                                <form action="#">
+                                    <p class="range-field">
+                                      <input type="range" id="test5" min="0" max="100" />
+                                    </p>
+                                </form>
+                            </a>
+                        </li>
+                        <!-- This is the radio button (more?) -->
+                        <li>
+                            <a href="#">
+                                <p>
+                                    <label>
+                                      <input class="with-gap" name="group1" type="radio"  />
+                                      <span>Broad?</span>
+                                    </label>
+                                  </p>
+                            </a>
+                        </li>
+                    </ul>
+                    
                 </div>
             </nav>
         </header>
-
+        
         <main>
             <!-- This will show the sidenav when the menu is clicked -->
             <div class="row">
@@ -99,10 +135,6 @@
                 </div>
             </div>
         </main>
-
-
-
-        
 
         <footer class="page-footer">
             <div class="footer-copyright">

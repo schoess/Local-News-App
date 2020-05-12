@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 
 
+
 // Newsapi.org
 // var queryURL = 'http://newsapi.org/v2/everything?q=' +
 //     subject +
