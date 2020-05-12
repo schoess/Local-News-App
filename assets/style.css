@@ -8,11 +8,23 @@ main {
     flex: 1 0 auto;
 }
 
+#searchKey {
+    margin-right: 10px;
+}
 /*
 ========================
 Article formatting styles
 ========================
 */
+.dropdown-content {
+    width: max-content;
+    height: auto;
+}
+
+.search-decor {
+    margin-top: 20px;
+}
+
 .thumbnailHolder {
     border-radius: 8px;
     border: 1px solid #ddd;

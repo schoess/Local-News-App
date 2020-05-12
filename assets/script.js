@@ -1,4 +1,26 @@
 // This is for the sidenav
+
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+  $('.dropdown-trigger').dropdown();
+  $('#slide-out')
+        .sidenav()
+        .on('click tap', 'li a', () => {
+            $('#slide-out').sidenav('close');
+        });
+})
+
+
+
+
+
+// Newsapi.org
+// var queryURL = 'http://newsapi.org/v2/everything?q=' +
+//     subject +
+//     '&sortBy=relevancy' +
+//     '&pageSize=10' +
+//     '&apiKey=51d68d8527904bf68e3a70ba046f4112';
+
 // document.addEventListener('DOMContentLoaded', function() {
 //   var elems = document.querySelectorAll('.sidenav');
 //   var instances = M.Sidenav.init(elems, options);
@@ -7,6 +29,7 @@
 // $(document).ready(function(){
 //   $('.sidenav').sidenav();
 // });
+
 
 var userLocation = {"city": "", "state": "", "country": ""};
 var pastLocations = [];
@@ -79,4 +102,5 @@ function findArticles () {
 
 //     }
 // }
+
 
