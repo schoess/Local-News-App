@@ -30,10 +30,7 @@
                         <li><a href="#!" class="hide-on-med-and-down">Previous Searches</a></li>
                     </u>
                     <!-- User search keyword shows up here -->
-                    <ul id="searchKey" class="right mr-2">
-                        <li class="">Keyword: </li>
-                        <li class="keyword"></li>
-                    </ul>
+                    <div id="search-key" class="right mr-2"></div>
                     <ul id="slide-out1" class="sidenav">
                         <li>
                             <a href="#">
@@ -89,7 +86,7 @@
             <div class="row">
                 <div class="col s12 m4 l3">
                     <!-- side bar with article choices pictures and -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-image">
                             <img src="https://materializecss.com/images/sample-1.jpg">
                             <span class="card-title">Card Title</span>
@@ -99,7 +96,7 @@
                             <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card"> -->
                     <!-- Extra cards go here (add more if necessary) -->
                     <!-- Copy the following syntax for adding more cards -->
                     <!-- 
@@ -114,19 +111,16 @@
                     -->
                     </div>
                 </div>
-                <div class="col s12 m8 l9">
+                <div class="col s12 m8 l9" id="article-container">
                     <!-- Main Article Display -->
-                    <div class="card horizontal">
+                    <div class="card horizontal" id="template">
                       <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img class="article-image" src="https://lorempixel.com/100/190/nature/6">
                       </div>
                       <div class="card-stacked">
                         <div class="card-content">
-                            <h4 class="header">Horizontal Card</h4>
+                            <h5 class="header">Horizontal Card</h5>
                             <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
                         </div>
                       </div>
                     </div>
