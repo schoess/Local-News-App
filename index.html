@@ -26,8 +26,7 @@
                     <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
                     
                     <ul id="nav-mobile" class="">                       
-                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#!" class="hide-on-med-and-down">Previous Searches</a></li>
+                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1">Filter</a></li>
                     </u>
                     <!-- User search keyword shows up here -->
                     <ul id="searchKey" class="right mr-2">
@@ -44,57 +43,48 @@
             <div class="row">
                 <div class="container">
                     <ul class="sidenav" id="slide-out">
-                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#" class="waves-effect">Previous Searches</a></li>
+                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1">Filter</a></li>
                     </ul>
-
                 </div>
             </div>
 
-            
-            <div class="container">
-                
+            <!-- This is the search slide out -->
+            <div class="container">               
                 <ul id="slide-out1" class="sidenav">
-                    <!-- This is the text search -->
-                    <div class="row sideDecor">
-                        <div class=col s10>
-                            <form>
-                                <div class="input-field">
-                                    <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
-                                    <label for="search">Enter Keyword</label>
-                                </div>
-                            </form>
-                        </div> 
-                    </div>
-
-                    <!-- This is the slider --> 
-                    <div id="input-range" class="row sideDecor">
+                    
+                    <!-- This is the first switch --> 
+                    <div id="input-switches" class="row side-decor">
                         <div class="col s10">
-                            <form action="#">
-                                <p class="range-field">
-                                    <label for=range"># of Articles</label>
-                                    <input type="range" id="test5" min="0" max="100" class="active" />
-                                    <span class="thumb"></span>                                    
-                                </p>
-                            </form>
+                            <div class="switch">
+                                <p>Narrow</p>
+                                <label>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <!-- This is the checkbox (more?) -->
-                    <div class="row sideDecor">
+                    <!-- This is the second switch -->
+                    <div id="input-switches" class="row side-decor">
                         <div class="col s10">
-                            <p>
+                            <div class="switch">
+                                <p>Broad</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" checked="checked" />
-                                    <span>What?</span>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
                                 </label>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </ul>
             </div>
-            <!--</div>-->
 
-            
+
+            <!-- These are the cards (articles) -->
             <div class="row">
                 <div class="col s12 m4 l3">
                     <!-- side bar with article choices pictures and -->
