@@ -26,11 +26,10 @@
                     <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
                     
                     <ul id="nav-mobile" class="">                       
-                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#!" class="hide-on-med-and-down">Previous Searches</a></li>
+                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1">Filter</a></li>
                     </u>
                     <!-- User search keyword shows up here -->
-                    <ul id="searchKey" class="right mr-2">
+                    <ul id="search-key" class="right mr-2">
                         <li class="">Keyword: </li>
                         <li class="keyword"></li>
                     </ul>
@@ -44,61 +43,52 @@
             <div class="row">
                 <div class="container">
                     <ul class="sidenav" id="slide-out">
-                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#" class="waves-effect">Previous Searches</a></li>
+                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1">Filter</a></li>
                     </ul>
-
                 </div>
             </div>
 
-            
-            <div class="container">
-                
+            <!-- This is the search slide out -->
+            <div class="container">               
                 <ul id="slide-out1" class="sidenav">
-                    <!-- This is the text search -->
-                    <div class="row sideDecor">
-                        <div class=col s10>
-                            <form>
-                                <div class="input-field">
-                                    <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
-                                    <label for="search">Enter Keyword</label>
-                                </div>
-                            </form>
-                        </div> 
-                    </div>
-
-                    <!-- This is the slider --> 
-                    <div id="input-range" class="row sideDecor">
+                    
+                    <!-- This is the first switch --> 
+                    <div id="input-switches" class="row side-decor">
                         <div class="col s10">
-                            <form action="#">
-                                <p class="range-field">
-                                    <label for=range"># of Articles</label>
-                                    <input type="range" id="test5" min="0" max="100" class="active" />
-                                    <span class="thumb"></span>                                    
-                                </p>
-                            </form>
+                            <div class="switch">
+                                <p>Narrow</p>
+                                <label>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <!-- This is the checkbox (more?) -->
-                    <div class="row sideDecor">
+                    <!-- This is the second switch -->
+                    <div id="input-switches" class="row side-decor">
                         <div class="col s10">
-                            <p>
+                            <div class="switch">
+                                <p>Broad</p>
                                 <label>
-                                    <input type="checkbox" class="filled-in" checked="checked" />
-                                    <span>What?</span>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
                                 </label>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </ul>
             </div>
-            <!--</div>-->
 
-            
+
+            <!-- These are the cards (articles) -->
             <div class="row">
                 <div class="col s12 m4 l3">
                     <!-- side bar with article choices pictures and -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-image">
                             <img src="https://materializecss.com/images/sample-1.jpg">
                             <span class="card-title">Card Title</span>
@@ -108,7 +98,7 @@
                             <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card"> -->
                     <!-- Extra cards go here (add more if necessary) -->
                     <!-- Copy the following syntax for adding more cards -->
                     <!-- 
@@ -123,19 +113,22 @@
                     -->
                     </div>
                 </div>
-                <div class="col s12 m8 l9">
+                <div class="col s12 m8 l9" id="article-container">
                     <!-- Main Article Display -->
-                    <div class="card horizontal">
+                    <div class="card horizontal" id="template">
                       <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img class="article-image" src="https://lorempixel.com/100/190/nature/6">
                       </div>
+                      <!-- Card Container-->
                       <div class="card-stacked">
+                          <!-- Card Content-->
                         <div class="card-content">
-                            <h4 class="header">Horizontal Card</h4>
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
+                            <!-- Article Title-->
+                            <h5 class="header">Horizontal Card</h5>
+                            <!-- Published Date-->
+                            <p class="date"></p>
+                            <!-- Article Description-->
+                            <p class="description">I am a very simple card. I am good at containing small bits of information.</p>
                         </div>
                       </div>
                     </div>

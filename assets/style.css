@@ -8,12 +8,12 @@ main {
     flex: 1 0 auto;
 }
 
-#searchKey {
-    margin-right: 10px;
+#search-key {
+    margin-right: 32px;
 }
 /*
 ========================
-Thumbnail formatting styles
+Card formatting styles
 ========================
 */
 .dropdown-content {
@@ -21,8 +21,19 @@ Thumbnail formatting styles
     height: auto;
 }
 
-.sideDecor {
+.side-decor {
     margin-top: 10px;
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-image {
+    height: 200px;
+    width: 200px;
+    margin: 20px 0px 20px 20px;
 }
 
 .thumbnail {
@@ -37,7 +48,10 @@ Thumbnail formatting styles
 .card-image {
     width: 150px !important;
     height: 150px !important;
+}
 
+.header {
+    padding-top: 0px !important;
 }
 
 /*
