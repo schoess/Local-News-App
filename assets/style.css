@@ -25,21 +25,9 @@ Thumbnail formatting styles
     margin-top: 10px;
 }
 
-.thumbnailHolder {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    float: right;
-}
-
 .thumbnail {
-    width: 300px !important;
+    height: 100% !important;
     object-fit: cover !important;
-    
 }
 
 .title {
