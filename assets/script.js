@@ -85,7 +85,7 @@ function findArticles () {
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=34cd4a8de7e6782a7018500f289c1964';
+        '&token=04a28e0bcb6d0b225d2a3135713547dd';
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -95,15 +95,17 @@ function findArticles () {
             localArticles = response.articles;
 
             //Appends article info to page
-            // $(".s2").append("<div class='thumbnailHolder'>" + 
-            // "<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>" + "</div>");
-            // $(".s6").append("<h5 class='title'>" + response.articles[1].title + "</h5>");
-            // $(".s6").append("<hp class='description'>" + response.articles[1].description + "</p>");
+            // $(".card-image").append("<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>");
+            // $(".header").text(response.articles[1].title);
+            // $("#date").text(moment(response.articles[1].publishedAt).format('MMMM Do YYYY, h:mma'));
+            // $("#info").text(response.articles[1].description);
+            // $("#full-article").attr("href", response.articles[1].url);
             for (var i = 0; i < localArticles.length; i++) {
                 var article = localArticles[i];
                 var newArticle = $("#template").clone();
                 newArticle.find(".header").text(article.title);
-                newArticle.find("p").text(article.description);
+                newArticle.find(".date").text(moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
                 $("#article-container").append(newArticle);
             } 

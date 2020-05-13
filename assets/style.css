@@ -13,7 +13,7 @@ main {
 }
 /*
 ========================
-Article formatting styles
+Card formatting styles
 ========================
 */
 .dropdown-content {
@@ -25,20 +25,14 @@ Article formatting styles
     margin-top: 10px;
 }
 
-.thumbnailHolder {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    float: right;
-}
-
 img {
     height: 100%;
     object-fit: cover;
+}
+
+.card-content {
+    padding-top: 20px !important;
+    
 }
 
 .card-image {
@@ -48,14 +42,31 @@ img {
 }
 
 .thumbnail {
-    width: 250px;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
 .title {
     display: inline-block;
+}
+
+.card-image {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.header {
+    margin-top: 0px !important;
+}
+
+/*
+========================
+Typography
+========================
+*/
+
+
+.date {
+    font-weight: 650;
 }
 
