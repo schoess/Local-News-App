@@ -8,6 +8,10 @@ main {
     flex: 1 0 auto;
 }
 
+footer {
+    flex-shrink: 0;
+}
+
 #search-key {
     margin-right: 32px;
 }
