@@ -67,10 +67,11 @@ function findArticles () {
             console.log(response);
             localArticles = response;
             //Appends article info to page
-            $(".s2").append("<div class='thumbnailHolder'>" + 
-            "<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>" + "</div>");
-            $(".s6").append("<h5 class='title'>" + response.articles[1].title + "</h5>");
-            $(".s6").append("<hp class='description'>" + response.articles[1].description + "</p>");
+            $(".card-image").append("<img class='thumbnail' src='" + response.articles[0].image + "' alt='Article Thumbnail'>");
+            $(".header").text(response.articles[0].title);
+            $("#date").text(moment(response.articles[0].publishedAt).format('MMMM Do YYYY, h:mma'));
+            $("#info").text(response.articles[0].description);
+            $("#full-article").attr("href", response.articles[0].url);
     });
 }
 
