@@ -85,7 +85,7 @@ function findArticles () {
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=34cd4a8de7e6782a7018500f289c1964';
+        '&token=04a28e0bcb6d0b225d2a3135713547dd';
     $.ajax({
         url: queryURL,
         method: "GET"
