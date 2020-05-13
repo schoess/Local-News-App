@@ -8,11 +8,23 @@ main {
     flex: 1 0 auto;
 }
 
+#searchKey {
+    margin-right: 10px;
+}
 /*
 ========================
 Thumbnail formatting styles
 ========================
 */
+.dropdown-content {
+    width: max-content;
+    height: auto;
+}
+
+.search-decor {
+    margin-top: 20px;
+}
+
 .thumbnailHolder {
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -27,9 +39,27 @@ Thumbnail formatting styles
 .thumbnail {
     width: 300px !important;
     object-fit: cover !important;
+    
 }
 
 .title {
     display: inline-block;
+}
+
+.card-image {
+    width: 150px !important;
+    height: 150px !important;
+
+}
+
+/*
+========================
+Typography
+========================
+*/
+
+
+.date {
+    font-weight: 650;
 }
 
