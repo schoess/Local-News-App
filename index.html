@@ -26,45 +26,12 @@
                     <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
                     
                     <ul id="nav-mobile" class="">                       
-                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#!" class="hide-on-med-and-down">Previous Searches</a></li>
+                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1">Filter</a></li>
                     </u>
                     <!-- User search keyword shows up here -->
-                    <div id="search-key" class="right mr-2"></div>
-                    <ul id="slide-out1" class="sidenav">
-                        <li>
-                            <a href="#">
-                                <div class="row">
-                                    <form class="col search-decor">
-                                        <div class="input-field col s12">
-                                            <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
-                                            <label for="search">Enter Keyword</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- This is the slider -->
-                        <li>
-                            <a href="#">
-                                <form action="#">
-                                    <p class="range-field">
-                                      <input type="range" id="rangeSlide" min="0" max="100" />
-                                    </p>
-                                </form>
-                            </a>
-                        </li>
-                        <!-- This is the radio button (more?) -->
-                        <li>
-                            <a href="#">
-                                <p>
-                                    <label>
-                                      <input class="with-gap" name="group1" type="radio"  />
-                                      <span>Broad?</span>
-                                    </label>
-                                  </p>
-                            </a>
-                        </li>
+                    <ul id="search-key" class="right mr-2">
+                        <li class="">Keyword: </li>
+                        <li class="keyword"></li>
                     </ul>
                     
                 </div>
@@ -76,13 +43,48 @@
             <div class="row">
                 <div class="container">
                     <ul class="sidenav" id="slide-out">
-                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1"><i class="material-icons">search</i></a></li>
-                        <li><a href="#" class="waves-effect">Previous Searches</a></li>
+                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1">Filter</a></li>
                     </ul>
-
                 </div>
             </div>
-            
+
+            <!-- This is the search slide out -->
+            <div class="container">               
+                <ul id="slide-out1" class="sidenav">
+                    
+                    <!-- This is the first switch --> 
+                    <div id="input-switches" class="row side-decor">
+                        <div class="col s10">
+                            <div class="switch">
+                                <p>Narrow</p>
+                                <label>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This is the second switch -->
+                    <div id="input-switches" class="row side-decor">
+                        <div class="col s10">
+                            <div class="switch">
+                                <p>Broad</p>
+                                <label>
+                                    Off
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+
+
+            <!-- These are the cards (articles) -->
             <div class="row">
                 <div class="col s12 m4 l3">
                     <!-- side bar with article choices pictures and -->
