@@ -34,41 +34,6 @@
                         <li class="">Keyword: </li>
                         <li class="keyword"></li>
                     </ul>
-                    <ul id="slide-out1" class="sidenav">
-                        <li>
-                            <a href="#">
-                                <div class="row">
-                                    <form class="col search-decor">
-                                        <div class="input-field col s12">
-                                            <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
-                                            <label for="search">Enter Keyword</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </a>
-                        </li>
-                        <!-- This is the slider -->
-                        <li>
-                            <a href="#">
-                                <form action="#">
-                                    <p class="range-field">
-                                      <input type="range" id="rangeSlide" min="0" max="100" />
-                                    </p>
-                                </form>
-                            </a>
-                        </li>
-                        <!-- This is the radio button (more?) -->
-                        <li>
-                            <a href="#">
-                                <p>
-                                    <label>
-                                      <input class="with-gap" name="group1" type="radio"  />
-                                      <span>Broad?</span>
-                                    </label>
-                                  </p>
-                            </a>
-                        </li>
-                    </ul>
                     
                 </div>
             </nav>
@@ -85,6 +50,50 @@
 
                 </div>
             </div>
+
+            
+            <div class="container">
+                
+                <ul id="slide-out1" class="sidenav">
+                    <!-- This is the text search -->
+                    <div class="row sideDecor">
+                        <div class=col s10>
+                            <form>
+                                <div class="input-field">
+                                    <input placeholder="Placeholder" id="searchKey" type="text" class="validate">
+                                    <label for="search">Enter Keyword</label>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+
+                    <!-- This is the slider --> 
+                    <div id="input-range" class="row sideDecor">
+                        <div class="col s10">
+                            <form action="#">
+                                <p class="range-field">
+                                    <label for=range"># of Articles</label>
+                                    <input type="range" id="test5" min="0" max="100" class="active" />
+                                    <span class="thumb"></span>                                    
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- This is the checkbox (more?) -->
+                    <div class="row sideDecor">
+                        <div class="col s10">
+                            <p>
+                                <label>
+                                    <input type="checkbox" class="filled-in" checked="checked" />
+                                    <span>What?</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <!--</div>-->
+
             
             <div class="row">
                 <div class="col s12 m4 l3">
