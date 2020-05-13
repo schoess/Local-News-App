@@ -21,13 +21,9 @@
                     <!-- Top Logo -->
                     <a class="brand-logo center">Local News</a>
                     <!-- This will hide the hamburger menu icon on medium screens and larger -->
-                    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium hide-on-med-and-up"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="slide-out1" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
                     
-                    <!-- This will show the spyglass (search) and 'previous searches on medium and large screens only -->
                     
-                    <ul id="nav-mobile" class="">                       
-                        <li><a href="#!" class="sidenav-trigger hide-on-med-and-down show-on-large" data-target="slide-out1">Filter</a></li>
-                    </u>
                     <!-- User search keyword shows up here -->
                     <ul id="search-key" class="right mr-2">
                         <li class="">Keyword: </li>
@@ -39,45 +35,51 @@
         </header>
         
         <main>
-            <!-- This will show the sidenav when the menu is clicked -->
-            <div class="row">
-                <div class="container">
-                    <ul class="sidenav" id="slide-out">
-                        <li><a href="#!" class="waves-effect sidenav-trigger" data-target="slide-out1">Filter</a></li>
-                    </ul>
-                </div>
-            </div>
 
             <!-- This is the search slide out -->
             <div class="container">               
                 <ul id="slide-out1" class="sidenav">
+
+                    <div class="row">
+                        <div class="col s10 side-decor">
+                            <h5>Filters</h5>
+                        </div>
+                    </div>
+                    <hr>
                     
                     <!-- This is the first switch --> 
-                    <div id="input-switches" class="row side-decor">
+                    <div id="distance-switch" class="row">
                         <div class="col s10">
                             <div class="switch">
-                                <p>Narrow</p>
+                                <p>Distance</p>
                                 <label>
-                                    Off
+                                    Narrow
                                     <input type="checkbox">
                                     <span class="lever"></span>
-                                    On
+                                    Broad
                                 </label>
                             </div>
                         </div>
                     </div>
                     <!-- This is the second switch -->
-                    <div id="input-switches" class="row side-decor">
+                    <div id="time-switch" class="row">
                         <div class="col s10">
                             <div class="switch">
-                                <p>Broad</p>
+                                <p>Time Period</p>
                                 <label>
-                                    Off
+                                    This Week
                                     <input type="checkbox">
                                     <span class="lever"></span>
-                                    On
+                                    Last Week
                                 </label>
                             </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 40px">
+                    <!-- This is a button -->
+                    <div id="apply-btn" class="row">
+                        <div class="col s10 side-decor">
+                            <a class="waves-effect waves-light btn">Apply</a>
                         </div>
                     </div>
                 </ul>
@@ -85,35 +87,8 @@
 
 
             <!-- These are the cards (articles) -->
-            <div class="row">
-                <div class="col s12 m4 l3">
-                    <!-- side bar with article choices pictures and -->
-                    <!-- <div class="card">
-                        <div class="card-image">
-                            <img src="https://materializecss.com/images/sample-1.jpg">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
-                    <div class="card"> -->
-                    <!-- Extra cards go here (add more if necessary) -->
-                    <!-- Copy the following syntax for adding more cards -->
-                    <!-- 
-                    <div class="card-image">
-                        <img src="https://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div> 
-                    -->
-                    </div>
-                </div>
-                <div class="col s12 m8 l9" id="article-container">
+            <div class="row">                
+                <div class="col s12" id="article-container">
                     <!-- Main Article Display -->
                     <div class="card horizontal" id="template">
                       <div class="card-image">
