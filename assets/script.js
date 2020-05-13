@@ -106,7 +106,8 @@ function findArticles () {
                 var newArticle = $("#template").clone();
                 newArticle.addClass("cloned");
                 newArticle.find(".header").text(article.title);
-                newArticle.find("p").text(article.description);
+                newArticle.find(".date").text(moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
                 newArticle.removeAttr("id");
                 $("#article-container").append(newArticle);
