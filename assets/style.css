@@ -8,8 +8,8 @@ main {
     flex: 1 0 auto;
 }
 
-#searchKey {
-    margin-right: 10px;
+#search-key {
+    margin-right: 32px;
 }
 /*
 ========================
@@ -34,6 +34,17 @@ Article formatting styles
     overflow: hidden;
     position: relative;
     float: right;
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-image {
+    height: 200px;
+    width: 200px;
+    margin: 20px 0px 20px 20px;
 }
 
 .thumbnail {
