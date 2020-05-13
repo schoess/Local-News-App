@@ -10,13 +10,25 @@ $(document).ready(function(){
         });
 })
 
+// Newsapi.org
+// var queryURL = 'http://newsapi.org/v2/everything?q=' +
+//     subject +
+//     '&sortBy=relevancy' +
+//     '&pageSize=10' +
+//     '&apiKey=51d68d8527904bf68e3a70ba046f4112';
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.sidenav');
+//   var instances = M.Sidenav.init(elems, options);
+// });
 
-
-
+// $(document).ready(function(){
+//   $('.sidenav').sidenav();
+// });
 
 var userLocation = {"city": "", "state": "", "country": ""};
 var pastLocations = [];
+var locationKeyword = "";
 // var fullName = "";
 var localArticles = "";
 
@@ -62,9 +74,20 @@ function searchArray () {
     }
 }
 
+
 function findArticles () {
+    if ($("#distance-switch").find("input").prop("checked") == false) {
+        locationKeyword = userLocation.city;
+    } else {
+        if (userLocation.country !== "US") {
+            locationKeyword = userLocation.country;
+        } else {
+            locationKeyword = userLocation.state;
+        }
+    }
+
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
-        userLocation.city +
+        locationKeyword +
         // Consider allowing the user to search with additional keywords
         // "AND" +
         // searchTerm +
@@ -77,21 +100,18 @@ function findArticles () {
         .then(function (response) {
             console.log(response);
             localArticles = response.articles;
-
-            //Appends article info to page
-            // $(".s2").append("<div class='thumbnailHolder'>" + 
-            // "<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>" + "</div>");
-            // $(".s6").append("<h5 class='title'>" + response.articles[1].title + "</h5>");
-            // $(".s6").append("<hp class='description'>" + response.articles[1].description + "</p>");
+            $(".cloned").remove();
             for (var i = 0; i < localArticles.length; i++) {
                 var article = localArticles[i];
                 var newArticle = $("#template").clone();
+                newArticle.addClass("cloned");
                 newArticle.find(".header").text(article.title);
-                newArticle.find("p").text(article.description);
+                newArticle.find(".date").text(moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
+                newArticle.removeAttr("id");
                 $("#article-container").append(newArticle);
-            } 
-            $("#template").remove();                  
+            }                
     });
 }
 
