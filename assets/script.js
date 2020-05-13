@@ -10,10 +10,6 @@ $(document).ready(function(){
         });
 })
 
-
-
-
-
 // Newsapi.org
 // var queryURL = 'http://newsapi.org/v2/everything?q=' +
 //     subject +
@@ -30,9 +26,9 @@ $(document).ready(function(){
 //   $('.sidenav').sidenav();
 // });
 
-
 var userLocation = {"city": "", "state": "", "country": ""};
 var pastLocations = [];
+var locationKeyword = "";
 // var fullName = "";
 var localArticles = "";
 
@@ -78,9 +74,20 @@ function searchArray () {
     }
 }
 
+
 function findArticles () {
+    if ($("#distance-switch").find("input").prop("checked") == false) {
+        locationKeyword = userLocation.city;
+    } else {
+        if (userLocation.country !== "US") {
+            locationKeyword = userLocation.country;
+        } else {
+            locationKeyword = userLocation.state;
+        }
+    }
+
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
-        userLocation.city +
+        locationKeyword +
         // Consider allowing the user to search with additional keywords
         // "AND" +
         // searchTerm +
@@ -93,23 +100,18 @@ function findArticles () {
         .then(function (response) {
             console.log(response);
             localArticles = response.articles;
-
-            //Appends article info to page
-            // $(".card-image").append("<img class='thumbnail' src='" + response.articles[1].image + "' alt='Article Thumbnail'>");
-            // $(".header").text(response.articles[1].title);
-            // $("#date").text(moment(response.articles[1].publishedAt).format('MMMM Do YYYY, h:mma'));
-            // $("#info").text(response.articles[1].description);
-            // $("#full-article").attr("href", response.articles[1].url);
+            $(".cloned").remove();
             for (var i = 0; i < localArticles.length; i++) {
                 var article = localArticles[i];
                 var newArticle = $("#template").clone();
+                newArticle.addClass("cloned");
                 newArticle.find(".header").text(article.title);
                 newArticle.find(".date").text(moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
                 newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
+                newArticle.removeAttr("id");
                 $("#article-container").append(newArticle);
-            } 
-            $("#template").remove();                  
+            }                
     });
 }
 

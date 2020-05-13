@@ -50,9 +50,8 @@ img {
     display: inline-block;
 }
 
-.card-image {
-    width: 150px !important;
-    height: 150px !important;
+#template {
+    display: none;
 }
 
 .header {
@@ -65,8 +64,6 @@ Typography
 ========================
 */
 
-
 .date {
     font-weight: 650;
 }
-
