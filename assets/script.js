@@ -9,10 +9,7 @@ $(document).ready(function () {
     $('.dropdown-trigger').dropdown();
     $('#slide-out')
         .sidenav()
-        .on('click tap', 'li a', () => {
-            $('#slide-out').sidenav('close');
-        });
-})
+});
 
 var userLocation = { "city": "", "state": "", "country": "" };
 var pastLocations = [];
@@ -80,7 +77,12 @@ function findArticles() {
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=34cd4a8de7e6782a7018500f289c1964';
+        '&token=a8507554f000787241ee6f6f22d251cb';
+        if ($("#time-switch").find("input").prop("checked") == true) {
+          queryURL += "&mindate=" + moment().subtract(14, "days").format("YYYY-MM-DD");
+          queryURL += "&maxdate=" + moment().subtract(7, "days").format("YYYY-MM-DD");
+        }
+        
     $.ajax({
         url: queryURL,
         method: "GET"
