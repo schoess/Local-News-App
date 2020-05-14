@@ -83,7 +83,7 @@ function findArticles() {
       queryURL += "&mindate=" + moment().subtract(14, "days").format("YYYY-MM-DD");
       queryURL += "&maxdate=" + moment().subtract(7, "days").format("YYYY-MM-DD");
     }
-
+    
     $.ajax({
       url: queryURL,
       method: "GET",
