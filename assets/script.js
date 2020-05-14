@@ -1,32 +1,20 @@
 // This is for the sidenav
 
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-  $('.dropdown-trigger').dropdown();
-  $('#slide-out')
+$(document).ready(function () {
+    $('.sidenav').sidenav({
+        onCloseStart: function () {
+            findArticles();
+        }
+    });
+    $('.dropdown-trigger').dropdown();
+    $('#slide-out')
         .sidenav()
         .on('click tap', 'li a', () => {
             $('#slide-out').sidenav('close');
         });
 })
 
-// Newsapi.org
-// var queryURL = 'http://newsapi.org/v2/everything?q=' +
-//     subject +
-//     '&sortBy=relevancy' +
-//     '&pageSize=10' +
-//     '&apiKey=51d68d8527904bf68e3a70ba046f4112';
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.sidenav');
-//   var instances = M.Sidenav.init(elems, options);
-// });
-
-// $(document).ready(function(){
-//   $('.sidenav').sidenav();
-// });
-
-var userLocation = {"city": "", "state": "", "country": ""};
+var userLocation = { "city": "", "state": "", "country": "" };
 var pastLocations = [];
 var locationKeyword = "";
 // var fullName = "";
@@ -42,7 +30,7 @@ window.onload = function () {
             saveLocation(location);
             // Maybe move this out of this location?
             findArticles();
-    });
+        });
 }
 
 function saveLocation(location) {
@@ -57,15 +45,15 @@ function saveLocation(location) {
         fullName = userLocation.city + ", " + userLocation.state;
     }
     if (pastLocations == "" || searchArray() == true) {
-        pastLocations.unshift({...userLocation});
+        pastLocations.unshift({ ...userLocation });
     } else {
         console.log("Current city is already stored in pastLocations")
     }
     $("#search-key").text(" " + fullName);
 }
 
-function searchArray () {
-    for (var i=0; i < pastLocations.length; i++) {
+function searchArray() {
+    for (var i = 0; i < pastLocations.length; i++) {
         if (pastLocations[i].city === userLocations.city) {
             return false;
         } else {
@@ -75,7 +63,7 @@ function searchArray () {
 }
 
 
-function findArticles () {
+function findArticles() {
     if ($("#distance-switch").find("input").prop("checked") == false) {
         locationKeyword = userLocation.city;
     } else {
@@ -92,7 +80,7 @@ function findArticles () {
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=04a28e0bcb6d0b225d2a3135713547dd';
+        '&token=34cd4a8de7e6782a7018500f289c1964';
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -106,15 +94,16 @@ function findArticles () {
                 var newArticle = $("#template").clone();
                 newArticle.addClass("cloned");
                 newArticle.find(".header").text(article.title);
-                newArticle.find(".date").text(moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.attr("data-url", article.url)
                 newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
                 newArticle.removeAttr("id");
                 $("#article-container").append(newArticle);
-            }                
-    });
+            }
+        });
 }
 
+$("#apply-btn").on("click", function () {
 
-
-
+})

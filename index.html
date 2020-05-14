@@ -1,132 +1,124 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<head>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        <title>Local News</title>
-        
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="assets/style.css" />
 
-    <body> 
-        <header>
-            <!-- Navigation -->
-            <nav class="nav-extended">
-                <div class="nav-wrapper">
-                    <!-- Top Logo -->
-                    <a class="brand-logo center">Local News</a>
-                    <!-- This will hide the hamburger menu icon on medium screens and larger -->
-                    <a href="#" data-target="slide-out1" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-                    
-                    
-                    <!-- User search keyword shows up here -->
-                    <ul id="search-key" class="right mr-2">
-                        <li class="">Keyword: </li>
-                        <li class="keyword"></li>
-                    </ul>
-                    
-                </div>
-            </nav>
-        </header>
-        
-        <main>
+    <title>Local News</title>
 
-            <!-- This is the search slide out -->
-            <div class="container">               
-                <ul id="slide-out1" class="sidenav">
+</head>
 
-                    <div class="row">
-                        <div class="col s10 side-decor">
-                            <h5>Filters</h5>
-                        </div>
-                    </div>
-                    <hr>
-                    
-                    <!-- This is the first switch --> 
-                    <div id="distance-switch" class="row side-decor">
-                        <div class="col s10">
-                            <div class="switch">
-                                <p>Distance</p>
-                                <label>
-                                    Narrow
-                                    <input type="checkbox">
-                                    <span class="lever"></span>
-                                    Broad
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- This is the second switch -->
-                    <div id="time-switch" class="row side-decor">
-                        <div class="col s10">
-                            <div class="switch">
-                                <p>Time Period</p>
-                                <label>
-                                    This Week
-                                    <input type="checkbox">
-                                    <span class="lever"></span>
-                                    Last Week
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr style="margin-top: 40px">
-                    <!-- This is a button -->
-                    <div id="apply-btn" class="row">
-                        <div class="col s10 side-decor">
-                            <a class="waves-effect waves-light btn">Apply</a>
-                        </div>
-                    </div>
-                </ul>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav class="nav-extended red lighten-2">
+            <div class="nav-wrapper">
+                <!-- Top Logo -->
+                <a class="brand-logo center ">Local News</a>
+                <!-- This will hide the hamburger menu icon on medium screens and larger -->
+                <a href="#" data-target="slide-out1" class="sidenav-trigger show-on-large"><i
+                        class="material-icons">menu</i></a>
             </div>
+        </nav>
+    </header>
 
+    <main>
 
-            <!-- These are the cards (articles) -->
-            <div class="row">                
-                <div class="col s12" id="article-container">
-                    <!-- Main Article Display -->
-                    <div class="card horizontal" id="template">
-                      <div class="card-image">
-                        <img class="article-image" src="https://bearmarketreview.files.wordpress.com/2013/06/crowd028a1.jpg">
-                      </div>
-                      <!-- Card Container-->
-                      <div class="card-stacked">
-                          <!-- Card Content-->
+        <!-- This is the search slide out -->
+        <div class="container">
+            <ul id="slide-out1" class="sidenav center-align">
+
+                <!-- This is the filter menue -->
+                <div class="row side-decor">
+                    <div class="col s12">
+                        <h5>Filters</h5>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <!-- This is the first switch -->
+                <div id="distance-switch" class="row">
+                    <div class="col s12">
+                        <div class="switch">
+                            <p>Distance</p>
+                            <label>
+                                Narrow
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                Broad
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is the second switch -->
+                <div id="time-switch" class="row">
+                    <div class="col s12">
+                        <div class="switch">
+                            <p>Time Period</p>
+                            <label>
+                                This Week
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                Last Week
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </ul>
+        </div>
+
+        <!-- These are the cards (articles) -->
+        <div class="row">
+            <br>
+            <div class="col s12" id="article-container">
+                <!-- Main Article Display -->
+                <div class="card horizontal hoverable" id="template" tabindex="0">
+                    <div class="card-image">
+                        <img class="article-image"
+                            src="https://bearmarketreview.files.wordpress.com/2013/06/crowd028a1.jpg">
+                    </div>
+                    <!-- Card Container-->
+                    <div class="card-stacked">
+                        <!-- Card Content-->
                         <div class="card-content">
                             <!-- Article Title-->
-                            <h5 class="header">Local News</h5>
+                            <h4 class="header">Local News</h4>
                             <!-- Published Date-->
                             <p class="date"></p>
                             <!-- Article Description-->
-                            <p class="description">Important info vital to being an informed member of your community.</p>
+                            <p class="description">Important info vital to being an informed member of your community.
+                            </p>
                         </div>
-                      </div>
                     </div>
-
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    @ 2020 Copyright
-                    <a class="grey-text text-lighten-4 right" href="#!">Links?</a>
-                </div>
+    <footer class="page-footer blue lighten-2">
+        <div class="container">
+            <p class="white-text center">Powered by GNews.io and GeoJS</p>
+        </div>
+        <div class="footer-copyright blue lighten-1">
+            <div class="container">
+                @ 2020 Copyright
+                <div id="search-key" class="grey-text text-lighten-4 right"></div>
             </div>
-        </footer>
- 
+        </div>
+    </footer>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
 
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="assets/script.js"></script>
-    </body>
 </html>
