@@ -2,6 +2,9 @@
 
 $(document).ready(function () {
     $('.sidenav').sidenav({
+        onOpenStart: function () {
+            $("#search").val("");
+        },
         onCloseStart: function () {
             findArticles();
         }
@@ -62,7 +65,6 @@ function searchArray() {
     }
 }
 
-
 function findArticles() {
     if ($("#distance-switch").find("input").prop("checked") == false) {
         locationKeyword = userLocation.city;
@@ -73,14 +75,22 @@ function findArticles() {
             locationKeyword = userLocation.state;
         }
     }
+    if ($("#search").val() !== "") {
+        locationKeyword += (" " + $("#search").val());
+    } else {
 
+    }
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
         // Consider allowing the user to search with additional keywords
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=34cd4a8de7e6782a7018500f289c1964';
+        '&token=583daeaee1977d97f8b1a5b323ef23d8';
+    if ($("#time-switch").find("input").prop("checked") == true) {
+        queryURL += "&mindate=" + moment().subtract(14, 'days').format("YYYY-MM-DD");
+        queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
+    }
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -103,4 +113,3 @@ function findArticles() {
             }
         });
 }
-
