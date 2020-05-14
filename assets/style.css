@@ -12,6 +12,10 @@ main {
     flex: 1 0 auto;
 }
 
+a {
+    color: black;
+}
+
 footer {
     flex-shrink: 0;
     padding: 0 !important;
@@ -20,6 +24,7 @@ footer {
 #search-key {
     margin-right: 32px;
 }
+
 /*
 ========================
 Card formatting styles

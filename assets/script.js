@@ -95,7 +95,7 @@ function findArticles() {
                 newArticle.addClass("cloned");
                 newArticle.find(".header").text(article.title);
                 newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
-                newArticle.attr("data-url", article.url)
+                newArticle.attr("href", article.url)
                 newArticle.find(".description").text(article.description);
                 newArticle.find("img").attr("src", article.image);
                 newArticle.removeAttr("id");
@@ -104,6 +104,3 @@ function findArticles() {
         });
 }
 
-$("#apply-btn").on("click", function () {
-
-})
