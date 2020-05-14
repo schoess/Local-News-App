@@ -73,19 +73,6 @@ function findArticles() {
         
         
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
-<<<<<<< HEAD
-    locationKeyword +
-    // Consider allowing the user to search with additional keywords
-    // "AND" +
-    // searchTerm +
-    '&max=20' +
-    '&token=a8507554f000787241ee6f6f22d251cb';
-    if ($("#time-switch").find("input").prop("checked") == true) {
-      queryURL += "&mindate=" + moment().subtract(14, "days").format("YYYY-MM-DD");
-      queryURL += "&maxdate=" + moment().subtract(7, "days").format("YYYY-MM-DD");
-    }
-    
-=======
         locationKeyword +
         // Consider allowing the user to search with additional keywords
         // "AND" +
@@ -97,7 +84,6 @@ function findArticles() {
           queryURL += "&maxdate=" + moment().subtract(7, "days").format("YYYY-MM-DD");
         }
         
->>>>>>> jt_branch
     $.ajax({
       url: queryURL,
       method: "GET",
