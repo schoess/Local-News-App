@@ -14,7 +14,6 @@ $(document).ready(function () {
 var userLocation = { "city": "", "state": "", "country": "" };
 var pastLocations = [];
 var locationKeyword = "";
-// var fullName = "";
 var localArticles = "";
 
 window.onload = function () {
@@ -59,7 +58,6 @@ function searchArray() {
     }
 }
 
-
 function findArticles() {
     if ($("#distance-switch").find("input").prop("checked") == false) {
         locationKeyword = userLocation.city;
@@ -68,22 +66,24 @@ function findArticles() {
             locationKeyword = userLocation.country;
         } else {
             locationKeyword = userLocation.state;
-          }
         }
-        
-        
+    }
+    if ($("#search").val() !== "") {
+        locationKeyword += (" " + $("#search").val());
+        $("#search").val("");
+    }
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
         // Consider allowing the user to search with additional keywords
         // "AND" +
         // searchTerm +
         '&max=20' +
-        '&token=a8507554f000787241ee6f6f22d251cb';
-        if ($("#time-switch").find("input").prop("checked") == true) {
-          queryURL += "&mindate=" + moment().subtract(14, "days").format("YYYY-MM-DD");
-          queryURL += "&maxdate=" + moment().subtract(7, "days").format("YYYY-MM-DD");
-        }
-        
+        '&token=583daeaee1977d97f8b1a5b323ef23d8';
+    // 583daeaee1977d97f8b1a5b323ef23d8
+    if ($("#time-switch").find("input").prop("checked") == true) {
+        queryURL += "&mindate=" + moment().subtract(14, 'days').format("YYYY-MM-DD");
+        queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
+    }
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -94,16 +94,19 @@ function findArticles() {
       $(".cloned").remove();
       for (var i = 0; i < localArticles.length; i++) {
         var article = localArticles[i];
-                var newArticle = $("#template").clone();
-                newArticle.addClass("cloned");
-                newArticle.find(".header").text(article.title);
-                newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
-                newArticle.attr("href", article.url)
-                newArticle.find(".description").text(article.description);
-                newArticle.find("img").attr("src", article.image);
-                newArticle.removeAttr("id");
-                $("#article-container").append(newArticle);
-            }
-        });
+            var newArticle = $("#template").clone();
+            newArticle.addClass("cloned");
+            newArticle.find(".header").text(article.title);
+            newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+            newArticle.attr("href", article.url)
+            newArticle.find(".description").text(article.description);
+            newArticle.find("img").attr("src", article.image);
+            newArticle.removeAttr("id");
+            $("#article-container").append(newArticle);
+        }
+    });
 }
 
+$("#refresh-button").on("click", function() {
+    findArticles();
+})
