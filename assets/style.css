@@ -25,6 +25,31 @@ footer {
     margin-right: 32px;
 }
 
+
+.input-field {
+    margin-top: 0px;
+    padding: 0px 20px 0px 40px;
+}
+
+.input-field i{
+    position:absolute;
+    top: 14px;
+    left: 10px;
+}
+
+#refresh-button {
+    margin: 0px 25px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+#refresh-button:hover {
+    transform: rotate(45deg);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-property: transform;
+}
+
 /*
 ========================
 Card formatting styles

@@ -2,9 +2,6 @@
 
 $(document).ready(function () {
     $('.sidenav').sidenav({
-        onOpenStart: function () {
-            $("#search").val("");
-        },
         onCloseStart: function () {
             findArticles();
         }
@@ -77,8 +74,7 @@ function findArticles() {
     }
     if ($("#search").val() !== "") {
         locationKeyword += (" " + $("#search").val());
-    } else {
-
+        $("#search").val("");
     }
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
@@ -87,6 +83,7 @@ function findArticles() {
         // searchTerm +
         '&max=20' +
         '&token=583daeaee1977d97f8b1a5b323ef23d8';
+    // 583daeaee1977d97f8b1a5b323ef23d8
     if ($("#time-switch").find("input").prop("checked") == true) {
         queryURL += "&mindate=" + moment().subtract(14, 'days').format("YYYY-MM-DD");
         queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
@@ -113,3 +110,7 @@ function findArticles() {
             }
         });
 }
+
+$("#refresh-button").on("click", function() {
+    findArticles();
+})
