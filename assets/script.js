@@ -70,7 +70,6 @@ function findArticles() {
             locationKeyword = userLocation.state;
         }
     }
-
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
         // Consider allowing the user to search with additional keywords
