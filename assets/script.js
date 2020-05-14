@@ -24,7 +24,6 @@ window.onload = function () {
         .then(function (location) {
             console.log(location);
             saveLocation(location);
-            // Maybe move this out of this location?
             findArticles();
         });
 }
@@ -74,12 +73,8 @@ function findArticles() {
     }
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
-        // Consider allowing the user to search with additional keywords
-        // "AND" +
-        // searchTerm +
         '&max=20' +
-        '&token=583daeaee1977d97f8b1a5b323ef23d8';
-    // 583daeaee1977d97f8b1a5b323ef23d8
+        '&token=a8507554f000787241ee6f6f22d251cb';
     if ($("#time-switch").find("input").prop("checked") == true) {
         queryURL += "&mindate=" + moment().subtract(14, 'days').format("YYYY-MM-DD");
         queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
