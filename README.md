@@ -1,8 +1,8 @@
-# Project Title: Local News App
+# Local News Application
 
-Project Description: Displays relevant local news to the user using device location or user IP.
+This is a responsive, mobile-friendly web-based news application that displays relevant local news to the user using location data from the users IP address. The application includes a filter feature that allows the user to narrow down results or search past articles. It displays a small excerpt of each article with the pulication, date, and a corresponding image.
 
-https://github.com/schoess/Local-News-App/
+[Try out the project here](https://github.com/schoess/Local-News-App/)
 
 ### User Story:
 
@@ -19,47 +19,28 @@ GIVEN I am looking for local news about things that are going on in my area
 WHEN I navigate to the local news app 
 THEN I am met with a list of 10 local news articles based off of my current IP location
 WHEN I examine the page
-THEN I see a set of filters at the top to narrow down my results
+THEN I can a set of filters in a menu at the top to narrow down my results
 WHEN I filter by date
-THEN I can see articles from either the last 10 or 30 days.
+THEN I can see articles from either the current or previous week.
 WHEN I filter by location
 THEN I either see articles from my city, or I can see articles from my state
 WHEN I am given those articles
-THEN I see a thumbnail image (if available), headline, date, author (if available), and short description
+THEN I see a thumbnail image (if available), headline, date, publication, and short description
 WHEN I click anywhere on the article
 THEN it brings me to the article source
 ```
 
-### Wireframe or sketch of Design:
-
-#### Materialize CSS
-
-* Header
-
-* Filter Menu
-
-* Single-scrolling list of articles
-
-* Each article Image, Title, Author, Date, Synopsis.
-
-* Footer
-
 ### APIs Used:
 
-* GeoJS
+* [GeoJS](https://www.geojs.io/)
 
-* NewYorkTimes (or other news API)
+* [GNews.io](https://gnews.io/)
 
-### Rough Breakdown of tasks:
+### CSS Framework Used:
 
-* Initial API exploration
+* [Materialize](https://materializecss.com/)
 
-* HTML Skeleton
+### Screenshots:
 
-* Fleshed-out HTML/CSS
+![Screenshot of Local News App](https://raw.githubusercontent.com/schoess/Local-News-App/master/screenshots/screenshot-1.png)
 
-* Functional JS
-
-* Polish MVP/Cleanup
-
-* Additional Features Passes
