@@ -2,7 +2,7 @@
 
 This is a responsive, mobile-friendly web-based news application that displays relevant local news to the user using location data from the users IP address. The application includes a filter feature that allows the user to narrow down results or search past articles. It displays a small excerpt of each article with the pulication, date, and a corresponding image.
 
-[Try out the project here](https://github.com/schoess/Local-News-App/)
+[Try out the project here](https://schoess.github.io/Local-News-App/)
 
 ### User Story:
 
