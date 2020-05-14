@@ -90,7 +90,8 @@ function findArticles() {
     })
     .then(function (response) {
       console.log(response);
-      localArticles = response.articles;
+      localArticles = [...response.articles];
+      checkArticles();
       $(".cloned").remove();
       for (var i = 0; i < localArticles.length; i++) {
         var article = localArticles[i];
@@ -105,6 +106,20 @@ function findArticles() {
             $("#article-container").append(newArticle);
         }
     });
+}
+
+function checkArticles() {
+    let duplicates = new Set()
+    for (var i = 0; i < localArticles.length; i++) {
+        for (var j = i + 1 ; j < localArticles.length; j++) {
+            if (localArticles[i].title.toLowerCase() == localArticles[j].title.toLowerCase()) {
+                duplicates.add(j)
+            }
+        }
+        for (var item of duplicates) {
+            localArticles.splice(item, 1)
+        }
+    }
 }
 
 $("#refresh-button").on("click", function() {
