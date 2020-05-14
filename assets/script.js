@@ -9,15 +9,11 @@ $(document).ready(function () {
     $('.dropdown-trigger').dropdown();
     $('#slide-out')
         .sidenav()
-        .on('click tap', 'li a', () => {
-            $('#slide-out').sidenav('close');
-        });
-})
+});
 
 var userLocation = { "city": "", "state": "", "country": "" };
 var pastLocations = [];
 var locationKeyword = "";
-// var fullName = "";
 var localArticles = "";
 
 window.onload = function () {
@@ -89,26 +85,26 @@ function findArticles() {
         queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
     }
     $.ajax({
-        url: queryURL,
-        method: "GET"
+      url: queryURL,
+      method: "GET",
     })
-        .then(function (response) {
-            console.log(response);
-            localArticles = response.articles;
-            $(".cloned").remove();
-            for (var i = 0; i < localArticles.length; i++) {
-                var article = localArticles[i];
-                var newArticle = $("#template").clone();
-                newArticle.addClass("cloned");
-                newArticle.find(".header").text(article.title);
-                newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
-                newArticle.attr("href", article.url)
-                newArticle.find(".description").text(article.description);
-                newArticle.find("img").attr("src", article.image);
-                newArticle.removeAttr("id");
-                $("#article-container").append(newArticle);
-            }
-        });
+    .then(function (response) {
+      console.log(response);
+      localArticles = response.articles;
+      $(".cloned").remove();
+      for (var i = 0; i < localArticles.length; i++) {
+        var article = localArticles[i];
+            var newArticle = $("#template").clone();
+            newArticle.addClass("cloned");
+            newArticle.find(".header").text(article.title);
+            newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+            newArticle.attr("href", article.url)
+            newArticle.find(".description").text(article.description);
+            newArticle.find("img").attr("src", article.image);
+            newArticle.removeAttr("id");
+            $("#article-container").append(newArticle);
+        }
+    });
 }
 
 $("#refresh-button").on("click", function() {
