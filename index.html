@@ -20,10 +20,12 @@
         <nav class="nav-extended red lighten-2">
             <div class="nav-wrapper">
                 <!-- Top Logo -->
-                <a class="brand-logo center ">Local News</a>
+                <a class="brand-logo center">Local News</a>
                 <!-- This will hide the hamburger menu icon on medium screens and larger -->
-                <a href="#" data-target="slide-out1" class="sidenav-trigger show-on-large"><i
-                        class="material-icons">menu</i></a>
+                <a href="#" data-target="slide-out1" class="sidenav-trigger show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+                <div class="right" id="refresh-button"><i class="material-icons">refresh</i></div>
             </div>
         </nav>
     </header>
@@ -34,11 +36,26 @@
         <div class="container">
             <ul id="slide-out1" class="sidenav center-align">
 
-                <!-- This is the filter menue -->
+                <!-- This is the text search -->
+
+
+                <!-- This is the filter menu -->
                 <div class="row side-decor">
                     <div class="col s12">
                         <h5>Filters</h5>
                     </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row side-decor">
+                    <div class="col s12">
+                        <form>
+                            <p>Refine Search Results</p>
+                            <div class="input-field" style="margin-bottom: 0px;">
+                                <input id="search">
+                                <i class="material-icons">search</i>
+                            </div>
+                        </form>
+                    </div> 
                 </div>
                 <div class="divider"></div>
 
