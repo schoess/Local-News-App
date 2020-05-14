@@ -4,12 +4,17 @@ body {
     flex-direction: column;
 }
 
+nav {
+    padding: 5px 0px;
+}
+
 main {
     flex: 1 0 auto;
 }
 
 footer {
     flex-shrink: 0;
+    padding: 0 !important;
 }
 
 #search-key {
@@ -34,14 +39,23 @@ img {
     object-fit: cover;
 }
 
+.article-container2 {
+    margin-top: 20px !important;
+}
+
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .card-content {
     padding-top: 20px !important;
     
 }
 
 .card-image {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     margin: 20px 0px 20px 20px;
 }
 
@@ -62,6 +76,13 @@ img {
     margin-top: 0px !important;
 }
 
+.lever {
+    background-color: #1de9b6 !important;
+}
+
+.lever:after {
+    background-color: #00bfa5 !important;
+}
 /*
 ========================
 Typography
@@ -69,5 +90,12 @@ Typography
 */
 
 .date {
-    font-weight: 650;
+    font-weight: 150;
+    margin-bottom: 10px !important;
 }
+
+/* @media screen and (max-width: 576px) {
+    .brand-logo {
+
+    }
+} */
