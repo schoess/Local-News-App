@@ -6,7 +6,6 @@ $(document).ready(function () {
             findArticles();
         }
     });
-    $('.dropdown-trigger').dropdown();
     $('#slide-out')
         .sidenav()
 });
