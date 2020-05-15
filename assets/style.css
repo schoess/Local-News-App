@@ -64,15 +64,6 @@ Card formatting styles
     margin-top: 10px;
 }
 
-img {
-    height: 100%;
-    object-fit: cover;
-}
-
-.article-container2 {
-    margin-top: 20px !important;
-}
-
 .card {
     margin-left: 20px;
     margin-right: 20px;
@@ -84,14 +75,13 @@ img {
 }
 
 .card-image {
-    height: 180px;
-    width: 180px;
     margin: 20px 0px 20px 20px;
 }
 
-.thumbnail {
-    height: 100% !important;
-    object-fit: cover !important;
+.article-image {
+    height: 200px;
+    width: 200px !important;
+    object-fit: cover;
 }
 
 .title {
@@ -136,19 +126,17 @@ Typography
     }
     .card {
         flex-wrap: wrap;
+        justify-content: center;
     }
     .card-image {
         max-width: 100% !important;
-        width: 100%;
-        height: 80%;
         margin: 20px 20px 0px 20px;
+    }
+    .article-image {
+        height: 50vw;
+        width: 100% !important;
     }
     .card-content {
         padding: 0px;
     }
 }
-
-/* @media screen and (max-width: 576px) {
-
-
-} */
