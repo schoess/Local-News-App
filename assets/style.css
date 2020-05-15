@@ -25,18 +25,6 @@ footer {
     margin-right: 32px;
 }
 
-
-.input-field {
-    margin-top: 0px;
-    padding: 0px 20px 0px 40px;
-}
-
-.input-field i{
-    position:absolute;
-    top: 14px;
-    left: 10px;
-}
-
 #refresh-button {
     margin: 0px 25px;
     cursor: pointer;
@@ -52,26 +40,46 @@ footer {
 
 /*
 ========================
-Card formatting styles
+Navigation Styles
 ========================
 */
-.dropdown-content {
-    width: max-content;
-    height: auto;
-}
 
 .side-decor {
     margin-top: 10px;
 }
 
+.input-field {
+    margin-top: 0px;
+    padding: 0px 20px 0px 40px;
+}
+
+.input-field i{
+    position:absolute;
+    top: 14px;
+    left: 10px;
+}
+
+.lever {
+    background-color: #1de9b6 !important;
+}
+
+.lever:after {
+    background-color: #00bfa5 !important;
+}
+
+/*
+========================
+Card Formatting Styles
+========================
+*/
+
+#template {
+    display: none;
+}
+
 .card {
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.card-content {
-    padding-top: 20px !important;
-    
 }
 
 .card-image {
@@ -84,25 +92,18 @@ Card formatting styles
     object-fit: cover;
 }
 
-.title {
-    display: inline-block;
-}
-
-#template {
-    display: none;
+.card-content {
+    padding-top: 20px !important; 
 }
 
 .header {
     margin-top: 0px !important;
 }
 
-.lever {
-    background-color: #1de9b6 !important;
+.title {
+    display: inline-block;
 }
 
-.lever:after {
-    background-color: #00bfa5 !important;
-}
 /*
 ========================
 Typography
@@ -113,6 +114,12 @@ Typography
     font-weight: 150;
     margin-bottom: 10px !important;
 }
+
+/*
+========================
+Responsive Media
+========================
+*/
 
 @media screen and (max-width: 992px) {
     h4 {
