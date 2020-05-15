@@ -73,7 +73,7 @@ function findArticles() {
     var queryURL = 'https://gnews.io/api/v3/search?q=' +
         locationKeyword +
         '&max=20' +
-        '&token=a8507554f000787241ee6f6f22d251cb';
+        '&token=fc2b57aae151f9d93f13bf26299196c2';
     if ($("#time-switch").find("input").prop("checked") == true) {
         queryURL += "&mindate=" + moment().subtract(14, 'days').format("YYYY-MM-DD");
         queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
@@ -95,7 +95,11 @@ function findArticles() {
                 newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
                 newArticle.attr("href", article.url)
                 newArticle.find(".description").text(article.description);
-                newArticle.find("img").attr("src", article.image);
+                if (article.image === null) {
+                    newArticle.find("img").attr("src", "assets/images/bokeh-54.png");
+                } else {
+                    newArticle.find("img").attr("src", article.image);
+                }
                 newArticle.removeAttr("id");
                 $("#article-container").append(newArticle);
             }
