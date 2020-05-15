@@ -14,7 +14,7 @@ $(document).ready(function () {
 var userLocation = { "city": "", "state": "", "country": "" };
 var pastLocations = [];
 var locationKeyword = "";
-var localArticles = "";
+var localArticles = [];
 
 window.onload = function () {
     $.ajax({
@@ -80,45 +80,38 @@ function findArticles() {
         queryURL += "&maxdate=" + moment().subtract(7, 'days').format("YYYY-MM-DD");
     }
     $.ajax({
-      url: queryURL,
-      method: "GET",
+        url: queryURL,
+        method: "GET",
     })
-    .then(function (response) {
-      console.log(response);
-      localArticles = [...response.articles];
-      checkArticles(response.articles);
-      $(".cloned").remove();
-      for (var i = 0; i < localArticles.length; i++) {
-        var article = localArticles[i];
-            var newArticle = $("#template").clone();
-            newArticle.addClass("cloned");
-            newArticle.find(".header").text(article.title);
-            newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
-            newArticle.attr("href", article.url)
-            newArticle.find(".description").text(article.description);
-            newArticle.find("img").attr("src", article.image);
-            newArticle.removeAttr("id");
-            $("#article-container").append(newArticle);
-        }
-    });
-}
-
-function checkArticles(array) {
-    let duplicates = new Set()
-    for (var i = 0; i < array.length; i++) {
-        for (var j = i + 1 ; j < array.length; j++) {
-            if (array[i].title.toLowerCase() == array[j].title.toLowerCase()) {
-                duplicates.add(j)
-                array.splice(i, 1);
+        .then(function (response) {
+            console.log(response);
+            //   checkArticles(response.articles);
+            localArticles = uniqByKeepLast(response.articles, (it) => it.title.toLowerCase());
+            console.log(localArticles);
+            $(".cloned").remove();
+            for (var i = 0; i < localArticles.length; i++) {
+                var article = localArticles[i];
+                var newArticle = $("#template").clone();
+                newArticle.addClass("cloned");
+                newArticle.find(".header").text(article.title);
+                newArticle.find(".date").text(article.source.name + " | " + moment(article.publishedAt).format('MMMM Do YYYY, h:mma'));
+                newArticle.attr("href", article.url)
+                newArticle.find(".description").text(article.description);
+                newArticle.find("img").attr("src", article.image);
+                newArticle.removeAttr("id");
+                $("#article-container").append(newArticle);
             }
-        }
-        // Rewrite to add good articles instead of duplicates
-        for (var item of duplicates) {
-            array.splice(item, 1)
-        }
-    }
+        });
 }
 
-$("#refresh-button").on("click", function() {
+function uniqByKeepLast(data, key) {
+    return [
+        ...new Map(
+            data.map(x => [key(x), x])
+        ).values()
+    ]
+}
+
+$("#refresh-button").on("click", function () {
     findArticles();
 })
