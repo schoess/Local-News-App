@@ -84,7 +84,6 @@ function findArticles() {
     })
         .then(function (response) {
             console.log(response);
-            //   checkArticles(response.articles);
             localArticles = uniqByKeepLast(response.articles, (it) => it.title.toLowerCase());
             console.log(localArticles);
             $(".cloned").remove();
